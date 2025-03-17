@@ -1,0 +1,75 @@
+/*Imagens tiradas de deadbydaylight.com*/
+html{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(53, 48, 48);
+}
+
+body{
+    margin-top: 20px;
+    background-color: rgb(77, 77, 77) ;
+    border-radius: 20px;
+    width: 80%;
+}
+
+h1{
+    height: 20px;
+}
+
+hr{
+    margin-top: 25px;
+    margin-bottom: 40px;
+    width: 90%;
+    
+}
+
+.texto{
+    color: rgb(218, 218, 219);
+}
+
+.imagem{
+    width: 100px;
+    height: 100px;
+}
+
+.imagem:hover{
+    cursor: pointer;
+}
+
+.adons{
+    width: 70px;
+    height: 70px;
+}
+
+.adons, #Item{
+    border-radius: 5px;
+}
+
+#LoadoutSelecionado{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#PerksS{
+    display: flex;
+    width: 500px;
+    justify-content: space-between;
+    margin: 50px;
+}
+
+#ItensS{
+    display: flex;
+    width: 280px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#Seleção{  /*IPC escrever qualquer coisa para nao ficar errado em partes como o javascript (ex: antes ao adicionar as imagens estava perdendo espaço entre elas, entao criei esse display flex com gap que concertou)*/
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
