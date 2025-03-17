@@ -1,45 +1,111 @@
 var SlotSelecionado=0 //0 1 2 3-> Perks,  4 5 6-> Itens/Adons
 var personagem="Sobrevivente"
 var qtdSelecionada=1 //0 perks qtd=1; 3-4 + perks qtd = 4
-var loadout=[0,0,0,0]
+var loadout=[0,0,0,0,0,0,0] // 0-3 perks   4 item   5-6 addons
 const Selecao = document.querySelector("#Seleção")
 var SelecaoPerkshtml
-var Selecaoitenshtml
-var Selecaoaddonshtml
+var Selecaoitenshtml = `<img src="Imagens/lanternaAmarela.webp" id="1" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/lanternaAmarela.webp" id="2" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/lanternaAmarela.webp" id="3" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/lanternaAmarela.webp" id="4" class="imagem" onclick=Pegar(id)>`
+var Selecaoaddonshtml = `<img src="Imagens/EndSapphireLens.webp" id="1" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/EndSapphireLens.webp" id="2" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/EndSapphireLens.webp" id="3" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/EndSapphireLens.webp" id="4" class="imagem" onclick=Pegar(id)>`
 
 function shout(num){
     alert(num)
 }
 
 function Selecionar(num){
+    if (SlotSelecionado<4){
+        SelecaoPerkshtml = Selecao.innerHTML
+        if(num == 4)
+            Selecao.innerHTML = Selecaoitenshtml
+        else if(num > 4)
+            Selecao.innerHTML = Selecaoaddonshtml
+    }
+    else if (SlotSelecionado==4){
+        Selecaoitenshtml = Selecao.innerHTML
+        if(num < 4)
+            Selecao.innerHTML = SelecaoPerkshtml
+        else if(num > 4)
+            Selecao.innerHTML = Selecaoaddonshtml
+    }
+    else if (SlotSelecionado>4){
+        Selecaoaddonshtml = Selecao.innerHTML
+        if(num < 4)
+            Selecao.innerHTML = SelecaoPerkshtml
+        else if(num == 4)
+            Selecao.innerHTML = Selecaoitenshtml
+    }
+
     SlotSelecionado=num
 }
 
 function Pegar(num){
-    if (SlotSelecionado>3){
-        SlotSelecionado=qtdSelecionada
+    if (SlotSelecionado<4){ //pegando perks
+        let slot = document.getElementById(`Perk${SlotSelecionado}`) //IPC usar ``
+        let lixo = document.getElementById(num)
+        let temp = slot.src
+        slot.src = lixo.src
+        lixo.remove()
+        if (loadout[SlotSelecionado]!=0){ //Se o slot que voce adicionou nao for vazio, o perk que voce tinha volta para a lista de seleção
+            let novo = document.createElement("img")
+            //NAO FUNCIONA ->   novo.innerHTML=`<img src="${temp}" id="${loadout[SlotSelecionado]}" class="imagem" onclick=Pegar(id)>`
+            novo.src = temp
+            novo.id = loadout[SlotSelecionado]
+            novo.className = "imagem"
+            novo.onclick = function() { Pegar(novo.id) } // IPC
+            Selecao.append(novo)
+        }
+        loadout[SlotSelecionado]=num
+
+        if (qtdSelecionada<4)
+            for (let i=0;i<4;i++){
+                if (loadout[i]==0){
+                    SlotSelecionado=i
+                    break
+                }
+            }
+    }
+    
+    else if (SlotSelecionado==4){ //Pegando Itens/Killers
+        let slot = document.getElementById("Item")
+        let lixo = document.getElementById(num)
+        let temp = slot.src
+        slot.src = lixo.src
+        lixo.remove()
+        if (loadout[4]!=0){
+            let novo = document.createElement("img")
+            novo.src = temp
+            novo.id = loadout[4]
+            novo.className = "imagem"
+            novo.onclick = function() {Pegar(novo.id)}
+            Selecao.append(novo)
+        }
+        loadout[4]=num
+        Selecionar(5)
     }
 
-    let slot = document.getElementById(`Perk${SlotSelecionado}`) //IPC usar ``
-    let lixo = document.getElementById(num)
-    let temp = slot.src
-    slot.src = lixo.src
-    lixo.remove()
-    if (loadout[SlotSelecionado]!=0){ //Se o slot que voce adicionou nao for vazio, o perk que voce tinha volta para a lista de seleção
-        let novo = document.createElement("img")
-        //NAO FUNCIONA ->   novo.innerHTML=`<img src="${temp}" id="${loadout[SlotSelecionado]}" class="imagem" onclick=Pegar(id)>`
-        novo.src = temp
-        novo.id = loadout[SlotSelecionado]
-        novo.className = "imagem"
-        novo.onclick = function() { Pegar(novo.id) } // IPC
-        Selecao.append(novo)
+    else if (SlotSelecionado>4){  //Pegando Addons
+        let slot = document.getElementById(`addon${SlotSelecionado-5}`)
+        let lixo = document.getElementById(num)
+        let temp = slot.src
+        slot.src = lixo.src
+        lixo.remove()
+        if (loadout[SlotSelecionado]!=0){
+            let novo = document.createElement("img")
+            novo.src = temp
+            novo.id = loadout[SlotSelecionado]
+            novo.className = "imagem"
+            Selecao.append(novo)
+        }
+        loadout[SlotSelecionado]=num
+        if (loadout[5]==0)
+            Selecionar(5)
+        else
+            SlotSelecionado++
     }
-    loadout[SlotSelecionado]=num
 
-    if(qtdSelecionada<3){
-        qtdSelecionada++
-    }
-    if (SlotSelecionado<3){
-        SlotSelecionado++
-    }
 }
