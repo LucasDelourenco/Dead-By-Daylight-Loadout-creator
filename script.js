@@ -116,10 +116,75 @@ function Pegar(num){
 }
 
 function TrocarTime(){
-    if(time=="Sobrevivente")
+    loadout=[0,0,0,0,0,0,0]
+    for(let i = 0; i<4;i++)
+        document.getElementById(`Perk${i}`).src = "Imagens/Vazio.png"
+    document.getElementById("Item").src = "Imagens/ItemVazio.png"
+    document.getElementById("addon0").src = "Imagens/ItemVazio.png"
+    document.getElementById("addon1").src = "Imagens/ItemVazio.png"
+    SlotSelecionado=0
+
+    if(time=="Sobrevivente"){
         time="Assassino"
-    else
+        document.getElementById("TrocarTime").src = "Imagens/survivor.jpeg"
+
+        Selecao.innerHTML = `<img src="Imagens/agitation.webp" id="1" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="2" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="3" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="4" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="5" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="6" class="imagem" onclick=Pegar(id)>                
+            <img src="Imagens/agitation.webp" id="7" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="8" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="9" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="10" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="11" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="12" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="13" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="14" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="15" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="16" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="17" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="18" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="19" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/agitation.webp" id="20" class="imagem" onclick=Pegar(id)>`
+        Selecaoitenshtml = `<img src="Imagens/trapper.webp" id="1" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/wraith.webp" id="2" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/nurse.webp" id="3" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/hillbilly.webp" id="4" class="imagem" onclick=Pegar(id)>`
+        Selecaoaddonshtml = ``
+    }
+    else{
         time="Sobrevivente"
+        document.getElementById("TrocarTime").src = "Imagens/killer.webp"
+
+        Selecao.innerHTML= `<img src="Imagens/headon.webp" id="1" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="2" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="3" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="4" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="5" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="6" class="imagem" onclick=Pegar(id)>                
+            <img src="Imagens/headon.webp" id="7" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="8" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="9" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="10" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="11" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="12" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="13" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="14" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="15" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="16" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="17" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="18" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="19" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/headon.webp" id="20" class="imagem" onclick=Pegar(id)>`
+        Selecaoitenshtml = `<img src="Imagens/lanternaAmarela.webp" id="1" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/lanternaAmarela.webp" id="2" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/lanternaAmarela.webp" id="3" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/lanternaAmarela.webp" id="4" class="imagem" onclick=Pegar(id)>`
+        Selecaoaddonshtml = ``
+    }
+
 }
 
 function Configuracao(){
