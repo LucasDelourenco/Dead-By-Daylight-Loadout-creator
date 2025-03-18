@@ -45,11 +45,41 @@ hr{
     border-radius: 5px;
 }
 
+.configs{
+    margin: 20px;
+    opacity: 0.85;
+}
+
+.configs:hover{
+    opacity: 1;
+}
+
+
+#AbaConfigurações > .imagem{
+    margin-right: 100px;
+}
+
+#TrocarTime{
+    animation: fadeIn 1s 1;
+}
+
+#cabeçalho {
+    display: flex;
+    align-items: center; 
+    width: 100%;
+}
+
+
+#cabeçalho h1 {
+    position: absolute;
+    left: 50%;  /* Posiciona o título no meio da tela */
+    transform: translateX(-50%);  /* Ajusta a posição para garantir que o centro do título esteja no meio da tela */
+}
+
 #LoadoutSelecionado{
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 #PerksS{
@@ -73,3 +103,13 @@ hr{
     justify-content: center;
 }
 
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100%{
+        opacity: 0.85;
+        transform: scale(1);
+    }
+}

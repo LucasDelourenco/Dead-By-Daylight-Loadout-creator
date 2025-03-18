@@ -1,8 +1,10 @@
 var SlotSelecionado=0 //0 1 2 3-> Perks,  4 5 6-> Itens/Adons
-var personagem="Sobrevivente"
+var time="Sobrevivente"
 var qtdSelecionada=1 //0 perks qtd=1; 3-4 + perks qtd = 4
 var loadout=[0,0,0,0,0,0,0] // 0-3 perks   4 item   5-6 addons
 const Selecao = document.querySelector("#Seleção")
+const EspacoInterativ = document.querySelector("#espaço interativo")
+const AbaConfig = document.querySelector("#AbaConfigurações")
 var SelecaoPerkshtml
 var Selecaoitenshtml = `<img src="Imagens/lanternaAmarela.webp" id="1" class="imagem" onclick=Pegar(id)>
             <img src="Imagens/lanternaAmarela.webp" id="2" class="imagem" onclick=Pegar(id)>
@@ -12,6 +14,9 @@ var Selecaoaddonshtml = `<img src="Imagens/EndSapphireLens.webp" id="1" class="i
             <img src="Imagens/EndSapphireLens.webp" id="2" class="imagem" onclick=Pegar(id)>
             <img src="Imagens/EndSapphireLens.webp" id="3" class="imagem" onclick=Pegar(id)>
             <img src="Imagens/EndSapphireLens.webp" id="4" class="imagem" onclick=Pegar(id)>`
+var configAberta = false
+var opacidade = 0
+
 
 function shout(num){
     alert(num)
@@ -108,4 +113,53 @@ function Pegar(num){
             SlotSelecionado++
     }
 
+}
+
+function TrocarTime(){
+    if(time=="Sobrevivente")
+        time="Assassino"
+    else
+        time="Sobrevivente"
+}
+
+function Configuracao(){
+    if(!configAberta){
+        document.getElementById("Configurações").remove()
+
+        let config = document.createElement("img")
+        config.src="Imagens/Config.webp"
+        config.id="Configurações"
+        config.className="imagem configs"
+        config.onclick = function(){Configuracao()}
+        AbaConfig.append(config)
+        
+
+        //Adicionando o botao trocar time
+        let tt = document.createElement("img")
+        tt.id = "TrocarTime"
+        tt.className = "imagem configs"
+        if (time=="Sobrevivente")
+            tt.src = "Imagens/killer.webp"
+        else
+            tt.src = "Imagens/survivor.webp"
+        tt.onclick = function(){TrocarTime()}
+        AbaConfig.append(tt)
+        configAberta=!configAberta
+        update()
+    }
+    else{
+        document.getElementById("TrocarTime").remove()
+        document.getElementById("Configurações").remove()
+        document.getElementById("cabeçalho").innerHTML = `<img src="Imagens/Config.webp" id="Configurações" class="imagem configs" onclick=Configuracao()>
+                <h1 class="texto"><strong>LOADOUT</strong></h1>`
+        configAberta=!configAberta
+    }
+}
+
+function update(){
+    if (configAberta && opacidade < 1){
+        document.getElementById("TrocarTime").style.opacity = opacidade
+        opacidade+=0.1
+        update()
+    }
 }
