@@ -35,6 +35,18 @@ function Selecionar(num){
         if(num < 4)
             Selecao.innerHTML = SelecaoPerkshtml
         else if(num > 4)
+
+            // C O N T I N U A R
+            //Faz os addons mudarem dependendo do item selecionado
+            if (time=="Sobrevivente"){
+                if (loadout[4]==1){ //Se for a lanterna1
+                    Selecaoaddonshtml = `<img src="Imagens/EndSapphireLens.webp" id="1" class="imagem" onclick=Pegar(id)>
+                    <img src="Imagens/EndSapphireLens.webp" id="2" class="imagem" onclick=Pegar(id)>
+                    <img src="Imagens/EndSapphireLens.webp" id="3" class="imagem" onclick=Pegar(id)>
+                    <img src="Imagens/EndSapphireLens.webp" id="4" class="imagem" onclick=Pegar(id)>`
+                }
+            }
+
             Selecao.innerHTML = Selecaoaddonshtml
     }
     else if (SlotSelecionado>4){
@@ -206,14 +218,28 @@ function Configuracao(){
         if (time=="Sobrevivente")
             tt.src = "Imagens/killer.webp"
         else
-            tt.src = "Imagens/survivor.webp"
+            tt.src = "Imagens/survivor.jpeg"
         tt.onclick = function(){TrocarTime()}
         AbaConfig.append(tt)
         configAberta=!configAberta
-        update()
+
+        //Adicionando div com botoes importar e exportar build
+        let copydiv = document.createElement("div")
+        copydiv.id = "AreaImportExport"
+        copydiv.className = "configs"
+        copydiv.innerHTML= `<div id="importar">
+                <p>Importar Build</p>
+                <input id="inpt" type="text" onkeypress="capturarEnter(event)">
+            </div>
+            <div id="exportar">
+                <p>Exportar Build</p>
+                <button onclick=Exportar()><span class="material-symbols-outlined">upload</span></button>
+            </div>`
+        AbaConfig.append(copydiv)
     }
     else{
         document.getElementById("TrocarTime").remove()
+        document.getElementById("AreaImportExport").remove()
         document.getElementById("Configurações").remove()
         document.getElementById("cabeçalho").innerHTML = `<img src="Imagens/Config.webp" id="Configurações" class="imagem configs" onclick=Configuracao()>
                 <h1 class="texto"><strong>LOADOUT</strong></h1>`
@@ -221,10 +247,63 @@ function Configuracao(){
     }
 }
 
-function update(){
-    if (configAberta && opacidade < 1){
-        document.getElementById("TrocarTime").style.opacity = opacidade
-        opacidade+=0.1
-        update()
+
+function capturarEnter(evento){
+    if (evento.key === "Enter")
+        Importar(evento.target.value)
+}
+
+function Exportar(){
+    let codigo
+    if(time=="Sobrevivente")
+        codigo="S."
+    else
+        codigo="K."
+    for(let i=0;i<6;i++){
+        codigo+=`${loadout[i]}.`
     }
+    codigo+=`${loadout[6]}`
+    navigator.clipboard.writeText(codigo)
+    alert("Código copiado para Área de Transferência")
+}
+function Importar(codigo){ 
+    let vetor = codigo.split(".")
+    if(vetor[0]=="S"){
+        TrocarTime()  //Troca para remover e resetar os perks e itens
+        if(time=="Assassino")
+            TrocarTime()  //Troca de volta para manter o time certo do importado
+    }
+    else if(vetor[0]=="K"){
+        TrocarTime()
+        if(time=="Sobrevivente")
+            TrocarTime()
+    }
+    else{
+        shout("Código Inválido")
+        return
+    }
+    //Setando as instancias do codigo
+    
+    for(let i=0;i<7;i++)
+        loadout[i]=vetor[i+1]
+    Selecionar(0)
+    for(let i=0;i<4;i++){
+        if(loadout[i]!=0){
+            document.getElementById(`Perk${i}`).src = document.getElementById(`${loadout[i]}`).src
+            document.getElementById(`${loadout[i]}`).remove()
+        }
+    }   
+    Selecionar(4)
+    if(loadout[4]!=0){
+    document.getElementById(`Item`).src = document.getElementById(`${loadout[4]}`).src
+    document.getElementById(`${loadout[4]}`).remove()
+    }
+    Selecionar(5)
+    for(let i=5;i<7;i++){
+        if(loadout[i]!=0){
+        document.getElementById(`addon${i-5}`).src = document.getElementById(`${loadout[i]}`).src
+        document.getElementById(`${loadout[i]}`).remove()
+        }
+    }
+    Selecionar(0)
 }

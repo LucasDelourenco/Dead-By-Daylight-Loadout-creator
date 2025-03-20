@@ -33,6 +33,7 @@ hr{
 
 .imagem:hover{
     cursor: pointer;
+    transform: scale(1.05);
 }
 
 .adons{
@@ -53,13 +54,41 @@ hr{
     opacity: 1;
 }
 
-
-#AbaConfigurações > .imagem{
-    margin-right: 100px;
+#AbaConfigurações{
+    display: flex;
 }
 
-#TrocarTime{
+#AbaConfigurações > .imagem{
+    margin-right: 150px;
+}
+
+#TrocarTime, #AreaImportExport{
     animation: fadeIn 1s 1;
+}
+
+#importar{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#importar>p{
+    margin: 0px;
+    margin-top: 8px;
+    color:rgb(218, 218, 219);
+}
+#importar>input{
+    margin: 5px;
+}
+#exportar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#exportar > button{
+    margin-left: 15px;
+}
+#exportar > p{
+    color:rgb(218, 218, 219);
 }
 
 #cabeçalho {
