@@ -15,10 +15,22 @@
                 <h1 class="texto"><strong>LOADOUT</strong></h1>
             </div>
             <div id="PerksS">
-                <img src="Imagens/Vazio.png" id="Perk0" class="imagem" onclick=Selecionar(0)>
-                <img src="Imagens/Vazio.png" id="Perk1" class="imagem" onclick=Selecionar(1)>
-                <img src="Imagens/Vazio.png" id="Perk2" class="imagem" onclick=Selecionar(2)>
-                <img src="Imagens/Vazio.png" id="Perk3" class="imagem" onclick=Selecionar(3)>
+                <div class="perkdiv">
+                    <img class="imagem remove" id="remove0" src="Imagens/removeApagado.png" onclick=Remover(0)>
+                    <img src="Imagens/Vazio.png" id="Perk0" class="imagem" onclick=Selecionar(0)>
+                </div>
+                <div class="perkdiv">
+                    <img class="imagem remove" id="remove1" src="Imagens/removeApagado.png" onclick=Remover(1)>
+                    <img src="Imagens/Vazio.png" id="Perk1" class="imagem" onclick=Selecionar(1)>
+                </div>
+                <div class="perkdiv">
+                    <img class="imagem remove" id="remove2" src="Imagens/removeApagado.png" onclick=Remover(2)>
+                    <img src="Imagens/Vazio.png" id="Perk2" class="imagem" onclick=Selecionar(2)>
+                </div>
+                <div class="perkdiv">
+                    <img class="imagem remove" id="remove3" src="Imagens/removeApagado.png" onclick=Remover(3)>
+                    <img src="Imagens/Vazio.png" id="Perk3" class="imagem" onclick=Selecionar(3)>
+                </div>
             </div>
             <div id="ItensS">
                 <img src="Imagens/ItemVazio.png" id="Item" class="imagem" onclick=Selecionar(4)>
@@ -30,110 +42,158 @@
         <hr>
 
 
-        <div id="Seleção">
+        <div id="Seleção" class="centralizado">
             <img src="Imagens/Perks/Survivor/aceinthehole.webp" id="1" class="imagem" onclick=Pegar(id)>
             <img src="Imagens/Perks/Survivor/adrenaline.webp" id="2" class="imagem" onclick=Pegar(id)>
             <img src="Imagens/Perks/Survivor/aftercare.webp" id="3" class="imagem" onclick=Pegar(id)>
             <img src="Imagens/Perks/Survivor/alert.webp" id="4" class="imagem" onclick=Pegar(id)>
             <img src="Imagens/Perks/Survivor/anymeansnecessary.webp" id="5" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/appraisal.webp" id="6" class="imagem" onclick=Pegar(id)>                
+            <img src="Imagens/Perks/Survivor/appraisal.webp" id="6" class="imagem" onclick=Pegar(id)>
             <img src="Imagens/Perks/Survivor/autodidact.webp" id="7" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/balancedlanding.webp" id="8" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/bitethebullet.webp" id="9" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/blastmine.webp" id="10" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/bloodpact.webp" id="11" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/boilover.webp" id="12" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/bond.webp" id="13" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/borrowedtime.webp" id="14" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/botanyknowledge.webp" id="15" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/breakdown.webp" id="16" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/breakout.webp" id="17" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/buckleup.webp" id="18" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/builttolast.webp" id="19" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/calmspirit.webp" id="20" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/circleofhealing.webp" id="21" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/clairvoyance.webp" id="22" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/correctiveaction.webp" id="23" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/counterforce.webp" id="24" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/dancewithme.webp" id="25" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/darktheory.webp" id="26" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/deadhard.webp" id="27" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/deception.webp" id="28" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/decisivestrike.webp" id="29" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/deliverance.webp" id="30" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/desperatemeasures.webp" id="31" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/detectiveshunch.webp" id="32" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/distortion.webp" id="33" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/diversion.webp" id="34" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/empathy.webp" id="35" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/empaticconnection.webp" id="36" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/exponencial.webp" id="37" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/fasttrack.webp" id="38" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/flashbang.webp" id="39" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/flipflop.webp" id="40" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/fogwise.webp" id="41" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/forthepeople.webp" id="42" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/hardened.webp" id="43" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/headon.webp" id="44" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/innerfocus.webp" id="45" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/ironwill.webp" id="46" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/leader.webp" id="47" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/leftbehind.webp" id="48" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/lithe.webp" id="49" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/luckybreak.webp" id="50" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/metalofman.webp" id="51" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/nomither.webp" id="52" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/objectofobsession.webp" id="53" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/offtherecord.webp" id="54" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/openhanded.webp" id="55" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/overcome.webp" id="56" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/overzealous.webp" id="57" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/parentalguidance.webp" id="58" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/pharmacy.webp" id="59" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/poised.webp" id="60" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/potentialenergy.webp" id="61" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/powerstruggle.webp" id="62" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/provethyself.webp" id="63" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/quickandquiet.webp" id="64" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/quickgambit.webp" id="65" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/redherring.webp" id="66" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/repressedalliance.webp" id="67" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/residualmanifest.webp" id="68" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/resurgence.webp" id="69" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/rookiespirit.webp" id="70" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/saboteur.webp" id="71" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/selfcare.webp" id="72" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/selfpreservation.webp" id="73" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/shadowstep.webp" id="74" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/smashhit.webp" id="75" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/solesurvivor.webp" id="76" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/solidarity.webp" id="77" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/soulguard.webp" id="78" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/sprintburst.webp" id="79" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/stakeout.webp" id="80" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/streetwise.webp" id="81" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/technician.webp" id="82" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/tenacity.webp" id="83" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/unbreakable.webp" id="84" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/uptheante.webp" id="85" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/urbanevasion.webp" id="86" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/vigil.webp" id="87" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/visionary.webp" id="88" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/wakeup.webp" id="89" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/weregonnaliveforever.webp" id="90" class="imagem" onclick=Pegar(id)>
-            <img src="Imagens/Perks/Survivor/windowsofopportunity.webp" id="91" class="imagem" onclick=Pegar(id)>
-
+            <img src="Imagens/Perks/Survivor/babysitter.webp" id="8" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/backgroundplayer.webp" id="9" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/balancedlanding.webp" id="10" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/bardicinspiration.webp" id="11" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/betterthannew.webp" id="12" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/bettertogether.webp" id="13" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/bitethebullet.webp" id="14" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/blastmine.webp" id="15" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/bloodpact.webp" id="16" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/bloodrush.webp" id="17" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/boilover.webp" id="18" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/bond.webp" id="19" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/booncircleofhealing.webp" id="20" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/boondarktheory.webp" id="21" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/boonexponencial.webp" id="22" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/boonilumination.webp" id="23" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/boonshadowstep.webp" id="24" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/borrowedtime.webp" id="25" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/botanyknowledge.webp" id="26" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/breakdown.webp" id="27" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/breakout.webp" id="28" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/buckleup.webp" id="29" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/builttolast.webp" id="30" class="imagem" onclick=Pegar(id)>            
+            <img src="Imagens/Perks/Survivor/calmspirit.webp" id="31" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/camaradie.webp" id="32" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/championoflight.webp" id="33" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/chemicaltrap.webp" id="34" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/clairvoyance.webp" id="35" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/cleanbreak.webp" id="36" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/correctiveaction.webp" id="37" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/counterforce.webp" id="38" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/cutloose.webp" id="39" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/dancewithme.webp" id="40" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/darksense.webp" id="41" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/deadhard.webp" id="42" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/deadline.webp" id="43" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/deception.webp" id="44" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/decisivestrike.webp" id="45" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/dejavu.webp" id="46" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/deliverance.webp" id="47" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/desperatemeasures.webp" id="48" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/detectiveshunch.webp" id="49" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/distortion.webp" id="50" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/diversion.webp" id="51" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/dramaturgy.webp" id="52" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/empathy.webp" id="53" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/empaticconnection.webp" id="54" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/exultation.webp" id="55" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/eyesodbelmont.webp" id="56" class="imagem" onclick=Pegar(id)>            
+            <img src="Imagens/Perks/Survivor/fasttrack.webp" id="57" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/finesse.webp" id="58" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/fixated.webp" id="59" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/flashbang.webp" id="60" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/flipflop.webp" id="61" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/fogwise.webp" id="62" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/forthepeople.webp" id="63" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/friendlycompetition.webp" id="64" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/hardened.webp" id="65" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/headon.webp" id="66" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/hope.webp" id="67" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/hyperfocus.webp" id="68" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/innerfocus.webp" id="69" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/innerstrengh.webp" id="70" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/invocationtreacherouscrows.webp" id="71" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/invocationweavingspiders.webp" id="72" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/ironwill.webp" id="73" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/kindred.webp" id="74" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/leader.webp" id="75" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/leftbehind.webp" id="76" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/lightfooted.webp" id="77" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/lightweight.webp" id="78" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/lithe.webp" id="79" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/lowprofile.webp" id="80" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/luckybreak.webp" id="81" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/luckystar.webp" id="82" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/madeforthis.webp" id="83" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/metalofman.webp" id="84" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/mirroredillusion.webp" id="85" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/momentofglory.webp" id="86" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/nomither.webp" id="87" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/nooneleftbehind.webp" id="88" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/objectofobsession.webp" id="89" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/offtherecord.webp" id="90" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/openhanded.webp" id="91" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/overcome.webp" id="92" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/overzealous.webp" id="93" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/parentalguidance.webp" id="94" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/pharmacy.webp" id="95" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/plottwist.webp" id="96" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/plunderersinstinct.webp" id="97" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/poised.webp" id="98" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/potentialenergy.webp" id="99" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/powerstruggle.webp" id="100" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/premonition.webp" id="101" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/provethyself.webp" id="102" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/quickandquiet.webp" id="103" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/quickgambit.webp" id="104" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/reactivehealing.webp" id="105" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/reassurence.webp" id="106" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/redherring.webp" id="107" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/repressedalliance.webp" id="108" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/residualmanifest.webp" id="109" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/resilience.webp" id="110" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/resurgence.webp" id="111" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/rookiespirit.webp" id="112" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/saboteur.webp" id="113" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/scavanger.webp" id="114" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/scenepartner.webp" id="115" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/secondwind.webp" id="116" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/selfcare.webp" id="117" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/selfpreservation.webp" id="118" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/shouldertheburden.webp" id="119" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/slipperymeat.webp" id="120" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/smallgame.webp" id="121" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/smashhit.webp" id="122" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/solesurvivor.webp" id="123" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/solidarity.webp" id="124" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/soulguard.webp" id="125" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/specialist.webp" id="126" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/spinechill.webp" id="127" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/sprintburst.webp" id="128" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/stakeout.webp" id="129" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/stillsight.webp" id="130" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/streetwise.webp" id="131" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/strengthinshadows.webp" id="132" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/teamworkcollectivestealth.webp" id="133" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/teamworkpoweroftwo.webp" id="134" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/technician.webp" id="135" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/tenacity.webp" id="136" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/thisisnothappening.webp" id="137" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/troubleshoter.webp" id="138" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/unbreakable.webp" id="139" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/uptheante.webp" id="140" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/urbanevasion.webp" id="141" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/vigil.webp" id="142" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/visionary.webp" id="143" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/wakeup.webp" id="144" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/weregonnaliveforever.webp" id="145" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/wewillmakeit.webp" id="146" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/wicked.webp" id="147" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/windowsofopportunity.webp" id="148" class="imagem" onclick=Pegar(id)>
+            <img src="Imagens/Perks/Survivor/wiretap.webp" id="149" class="imagem" onclick=Pegar(id)>            
         </div>
 
-        
-
-
-
-        <!--
-        <div class="carta" onclick=Marcar()>
-            <img src="selfie1.jpg" class="imagem"> <p class="texto">Lucas</p>
-            
-        </div> Sistema de Carta Yugioh-->
     </div>
 
     

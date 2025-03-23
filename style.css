@@ -1,6 +1,6 @@
 html{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     background-color: rgb(53, 48, 48);
 }
 
@@ -36,6 +36,11 @@ hr{
     transform: scale(1.05);
 }
 
+.quadro{
+    width: 220px;
+    height: 220px;
+}
+
 .adons{
     width: 70px;
     height: 70px;
@@ -54,16 +59,41 @@ hr{
     opacity: 1;
 }
 
+.perkdiv{
+    display: flex;
+    flex-direction: column;
+}
+
+.remove{
+    height: 20px;
+    width: 20px;
+    opacity: 30%;
+}
+.remove:hover{
+    opacity: 80%;
+}
+
+.infos{
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    gap: 50px;
+}
+.infos>img{
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
 #AbaConfigurações{
     display: flex;
 }
 
-#AbaConfigurações > .imagem{
-    margin-right: 150px;
+#AbaConfigurações > .imagem, #AbaConfigurações > div{
+    margin-right: 100px;
 }
 
-#TrocarTime, #AreaImportExport{
-    animation: fadeIn 1s 1;
+#TrocarTime, #AreaImportExport, #Informações{
+    animation: fadeIn 0.8s 1;
 }
 
 #importar{
@@ -128,6 +158,8 @@ hr{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+}
+.centralizado{
     justify-content: center;
 }
 
